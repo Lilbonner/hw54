@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cell from "./Cell";
 
 interface BoardProps {
   items: boolean[];
