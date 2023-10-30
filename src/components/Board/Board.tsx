@@ -27,7 +27,7 @@ const Board: React.FC<BoardProps> = ({ items, onCellClick, resetGame }) => {
 
       </div>
       <button className="reset-button" onClick={handleResetClick}>
-        Сброс
+        Reset
       </button>
     </div>
   );

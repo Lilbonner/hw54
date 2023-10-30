@@ -30,10 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Найди кольцо</h1>
-      <p>Попыток: {attempts}</p>
+      <h1>Find circle</h1>
+      <p>Attempts: {attempts}</p>
       <Board items={items} onCellClick={handleCellClick} resetGame={resetGame} />
-      {isGameWon ? <div className="game-won">Вы победили!</div> : null}
+      {isGameWon ? <div className="game-won">You win!</div> : null}
     </div>
   );
 }
