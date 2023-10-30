@@ -36,7 +36,39 @@
 .card {
   padding: 2em;
 }
-
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .read-the-docs {
   color: #888;
 }
+
+.reset-button {
+  margin: 20px 0;
+}
+
+.board {
+  border: 1px solid black;
+  padding: 10px;
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.clicked {
+  background-color: #b83030;
+  color: black;
+}
+
+.cell {
+  border: 1px solid black;
+  background: black;
+  margin: 5px;
+  width: 26px;
+  height: 26px;
+}
+
+

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cell from "./Cell";
+import Cell from "./cell.tsx";
 
 interface BoardProps {
   items: boolean[];
@@ -23,7 +23,8 @@ const Board: React.FC<BoardProps> = ({ items, onCellClick, resetGame }) => {
       <div className="board">
         {items.map((hasItem, index) => (
           <Cell key={index} hasItem={hasItem} onClick={() => onCellClick(index)} reset={reset} />
-        )}
+        ))}
+
       </div>
       <button className="reset-button" onClick={handleResetClick}>
         Сброс

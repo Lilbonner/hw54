@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Board from "./board.tsx";
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function createItems(): boolean[] {
+  const items: boolean[] = Array(36).fill(false);
+  const randomIndex = Math.floor(Math.random() * 36);
+  items[randomIndex] = true;
+  return items;
 }
 
-export default App
+function App() {
+  const [items, setItems] = useState(createItems());
+  const [attempts, setAttempts] = useState(0);
+  const [isGameWon, setIsGameWon] = useState(false);
+
+  const resetGame = () => {
+    setItems(createItems());
+    setAttempts(0);
+    setIsGameWon(false);
+  };
+
+  const handleCellClick = (index: number) => {
+    if (items[index]) {
+      setIsGameWon(true);
+    } else {
+      setAttempts(attempts + 1);
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Найди кольцо</h1>
+      <p>Попыток: {attempts}</p>
+      <Board items={items} onCellClick={handleCellClick} resetGame={resetGame} />
+      {isGameWon ? <div className="game-won">Вы победили!</div> : null}
+    </div>
+  );
+}
+
+export default App;
