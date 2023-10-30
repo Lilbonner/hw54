@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Board from "./board.tsx";
+import Board from "../Board/Board.tsx";
 import './App.css';
 
 function createItems(): boolean[] {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cell from "./cell.tsx";
+import Cell from "../Cell/Cell.tsx";
 
 interface BoardProps {
   items: boolean[];

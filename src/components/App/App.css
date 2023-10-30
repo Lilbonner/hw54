@@ -36,17 +36,27 @@
 .card {
   padding: 2em;
 }
+
+.read-the-docs {
+  color: #888;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.read-the-docs {
-  color: #888;
-}
 
 .reset-button {
   margin: 20px 0;
+}
+
+.cell {
+  border: 1px solid black;
+  background: black;
+  margin: 5px;
+  width: 26px;
+  height: 26px;
 }
 
 .board {
@@ -58,17 +68,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
+
 .clicked {
-  background-color: #b83030;
+  background-color: #f70505;
   color: black;
 }
-
-.cell {
-  border: 1px solid black;
-  background: black;
-  margin: 5px;
-  width: 26px;
-  height: 26px;
-}
-
-
